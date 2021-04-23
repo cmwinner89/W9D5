@@ -1,3 +1,3 @@
 import { htmlGenerator } from "./warmup";
 
-import clock from "./clock";
+import Clock from "./clock";

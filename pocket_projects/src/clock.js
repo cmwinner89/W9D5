@@ -13,8 +13,9 @@ class Clock {
       this.seconds = currentTime.getSeconds();
   
       // 3. Call printTime.
-      this.printTime();
-  
+
+      htmlGenerator(this.printTime(), clockEle);
+
       // 4. Schedule the tick at 1 second intervals.
       setInterval(this._tick.bind(this), 1000);
     }
@@ -22,17 +23,19 @@ class Clock {
     printTime() {
       // Format the time in HH:MM:SS
       const timeString = [this.hours, this.minutes, this.seconds].join(":");
-  
+      
       // Use console.log to print it.
-      console.log(timeString);
-    }
+        return timeString;
+
   
+    }
+    
     _tick() {
       // 1. Increment the time by one second.
       this._incrementSeconds();
   
       // 2. Call printTime.
-      this.printTime();
+      htmlGenerator(clock.printTime(), clockEle);
     }
   
     _incrementSeconds() {
@@ -57,9 +60,8 @@ class Clock {
     }
   }
   
-  const clock = new Clock();
   const clockEle = document.getElementById("clock");
+  const clock = new Clock();
 //   const textNode = document.createTextNode(clock.printTime());
 //   clockEle.appendChild(textNode)
-//   debugger
-  htmlGenerator(clock.printTime(), clockEle);
+//   debugge
